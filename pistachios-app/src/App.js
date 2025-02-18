@@ -57,8 +57,18 @@ function App() {
       </Routes>
 
       <footer className="appFooter">
-        <div>
-          <h1>FOOTER</h1>
+        <div id="footerContainer">
+          <div id="footerCopyright">
+            <h4 className="footerFont">@LAWLOR LLC</h4>
+          </div>
+          <div id="footerAddress">
+            <h4 className="footerFont">Albany, NY</h4>
+            <h4 className="footerFont"> 1 Pistachio Lane, 12205 </h4>
+          </div>
+          <div id="footerContact">
+            <h4 className="footerFont">Follow Us</h4>
+            <h4 className="footerFont">@PISTACHIOBAR</h4>
+          </div>
         </div>
       </footer>
     </div>
