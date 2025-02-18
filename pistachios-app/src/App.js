@@ -1,6 +1,7 @@
 import logo from "./pistachio.png";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react"; // Import useState
 
 import { Route, Routes, Link } from "react-router-dom";
 
@@ -11,15 +12,21 @@ import Blog from "./pages/BlogPage/BlogPage";
 import Contact from "./pages/ContactPage/ContactPage";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false); // State for menu visibility
+
   return (
     <div className="App">
       <div className="App-Nav">
         <div className="App-Title-Container">
+            {/* Hamburger Menu Button */}
+        <div className="hamburger-menu" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
           <img src={logo} className="App-logo" alt="logo" />
           <h1 id="siteTitle">PISTACHIOS</h1>
         </div>
-        <div className="navLinks-Container">
-          <div>
+      
+        <div className={`navLinks-Container ${menuOpen ? "open" : ""}`}>          <div>
             {" "}
             <Link className="navLinks" to="/">
               HOME
