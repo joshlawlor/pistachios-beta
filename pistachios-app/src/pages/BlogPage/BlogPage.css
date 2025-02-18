@@ -1,4 +1,6 @@
 .blogMain {
   background-color: #faf3e0;
-  min-height: 90vh;
+  min-height: 80vh;
+  MAX-height: 80vh;
+
 }
