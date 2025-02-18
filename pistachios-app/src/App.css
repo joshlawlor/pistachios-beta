@@ -9,12 +9,11 @@
 }
 
 .App-Nav {
-  background-color: #2E5339;
+  background-color: #2e5339;
   font-size: calc(10px + 2vmin);
   display: flex;
   min-height: 10vh;
   align-items: center;
-  
 }
 
 .App-Title-Container {
@@ -22,30 +21,39 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-right: 10vw;
-  color: #D9A441;
+  margin-right: 1vw;
+  color: #d9a441;
   font-family: "Diplomata SC", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.App-logo{
+.App-logo {
   height: 8vmin;
   margin-right: 1.5vw;
-  margin-left: .75vw;
+  margin-left: 0.75vw;
   pointer-events: none;
   display: flex;
   flex-direction: row;
 }
 
+.navLinks-Container {
+  display: flex;
+  flex-direction: row;
+  min-width: 50vw;
+  margin-left: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .navLinks {
   float: right;
-  color: #D9A441;
+  color: #d9a441;
   font-family: "Unlock", serif;
   font-weight: 400;
   font-style: normal;
+  padding-right: 8vw;
 }
-
 
 @keyframes App-logo-spin {
   from {
