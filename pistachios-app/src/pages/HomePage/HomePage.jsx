@@ -95,9 +95,13 @@ function HomePage() {
               <h3 id="eventTitle" className="headerFont">Drunk Spelling Bee</h3>
               <h4>Wednesdays @ 8PM</h4>
             </div>
-            <div id="eventTitle" className="eventPreview">
-              <h3 className="headerFont">Live Mystery Karoake</h3>
+            <div className="eventPreview">
+              <h3  id="eventTitle" className="headerFont">Live Mystery Karoake</h3>
               <h4>Saturdays @ 9PM</h4>
+            </div>
+            <div className="eventPreview">
+              <h3  id="eventTitle" className="headerFont">MOVIE TRIVIA</h3>
+              <h4>Sundays @ 7PM</h4>
             </div>
           </div>
         </div>
