@@ -18,6 +18,7 @@
   font-size: calc(10px + 2vmin);
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   min-height: 10vh;
   max-height: 15vh;
   min-width: 100vw;
@@ -35,7 +36,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-right: vw;
   color: #d9a441;
   font-family: "Diplomata SC", serif;
   font-weight: 400;
@@ -60,6 +60,16 @@
   justify-content: center;
   margin-bottom: 10px;
 }
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #d9a441;
+  margin-right: 10px;
+}
+
+
 .navLinks {
   float: right;
   color: #d9a441;
@@ -106,4 +116,35 @@
   font-style: normal;
   font-size: medium;
 
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .navLinks-Container {
+    display: none; /* Hide default menu */
+    flex-direction: column;
+    width: 100%;
+    background-color: #2e5339;
+    position: absolute;
+    top: 10vh; /* Place below navbar */
+    right: 0;
+    text-align: center;
+    z-index: 10;
+  }
+  #siteTitle {
+    font-size: x-large;
+    margin-top: 10px;
+  }
+  .navLinks-Container.open {
+    display: flex; /* Show menu when open */
+  }
+  .navLinks {
+    padding: 15px;
+    width: 100%;
+    display: block;
+  }
+
+  .hamburger-menu {
+    display: block; /* Show hamburger icon */
+  }
 }
