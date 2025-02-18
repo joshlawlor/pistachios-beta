@@ -27,7 +27,7 @@ function HomePage() {
                 src={barFun}
                 alt="barFun"
               />
-              <h4>Welcome to Pistachios</h4>
+              <h4 className="headerFont">Welcome to Pistachios</h4>
             </div>
             <div className="postPreview">
               <img
@@ -37,7 +37,7 @@ function HomePage() {
                 alt="barFun"
               />
 
-              <h4>A Night at Pistachios</h4>
+              <h4 className="headerFont">A Night at Pistachios</h4>
             </div>
             <div className="postPreview">
               <img
@@ -47,7 +47,7 @@ function HomePage() {
                 alt="barFun"
               />
 
-              <h4>New Review!</h4>
+              <h4 className="headerFont">New Review!</h4>
             </div>
             <div className="postPreview">
               <img
@@ -57,7 +57,7 @@ function HomePage() {
                 alt="barFun"
               />
 
-              <h4>Karoake Chaos...</h4>
+              <h4 className="headerFont">Karoake Chaos...</h4>
             </div>
           </div>
         </div>
@@ -86,6 +86,20 @@ function HomePage() {
           <h2 id=" rightContentTitle" className="contentTitles">
             Events
           </h2>
+          <div id="eventsContainer">
+            <div className="eventPreview">
+              <h3 className="headerFont">Wacky Auction Night</h3>
+              <h4>Every Friday @ 9PM</h4>
+            </div>
+            <div className="eventPreview">
+              <h3 className="headerFont">Drunk Spelling Bee</h3>
+              <h4>Wednesdays @ 8PM</h4>
+            </div>
+            <div className="eventPreview">
+              <h3 className="headerFont">Live Mystery Karoake</h3>
+              <h4>Saturdays @ 9PM</h4>
+            </div>
+          </div>
         </div>
       </div>
     </div>
