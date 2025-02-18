@@ -4,6 +4,8 @@
   flex-direction: column;
   justify-content: center;
   background-color: #faf3e0;
+  overflow-x: hidden;
+
 
 }
 
@@ -22,8 +24,16 @@
   background-color: #2e5339;
   font-size: calc(10px + 2vmin);
   display: flex;
+  flex-wrap: wrap;
   min-height: 10vh;
+  max-height: 10vh;
+  min-width: 100vw;
+  max-width: 100vw;
   align-items: center;
+}
+
+#siteTitle {
+  font-size: xx-large;
 }
 
 .App-Title-Container {
@@ -31,7 +41,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-right: 1vw;
+  margin-right: vw;
   color: #d9a441;
   font-family: "Diplomata SC", serif;
   font-weight: 400;
@@ -39,7 +49,8 @@
 }
 
 .App-logo {
-  height: 8vmin;
+  min-height: 8vmin;
+  max-height: 8vmin;
   margin-right: 1.5vw;
   margin-left: 0.75vw;
   pointer-events: none;
@@ -50,8 +61,7 @@
 .navLinks-Container {
   display: flex;
   flex-direction: row;
-  margin-left: 1vw;
-  display: flex;
+  margin-left: 5vw;
   align-items: center;
   justify-content: center;
 }

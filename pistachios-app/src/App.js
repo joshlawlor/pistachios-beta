@@ -16,7 +16,7 @@ function App() {
       <div className="App-Nav">
         <div className="App-Title-Container">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>PISTACHIOS</h1>
+          <h1 id="siteTitle">PISTACHIOS</h1>
         </div>
         <div className="navLinks-Container">
           <div>
@@ -46,7 +46,6 @@ function App() {
             </Link>
           </div>
         </div>
-        
       </div>
 
       <Routes>
@@ -58,12 +57,11 @@ function App() {
       </Routes>
 
       <footer className="appFooter">
-          <div>
-            <h1>FOOTER</h1></div>
-          </footer>
+        <div>
+          <h1>FOOTER</h1>
+        </div>
+      </footer>
     </div>
-
-    
   );
 }
 
