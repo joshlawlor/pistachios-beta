@@ -213,20 +213,10 @@
   text-decoration: underline;
 }
 
-
-
-
-
-
-
-
-
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
-
-
 
 /* Handle */
 ::-webkit-scrollbar-thumb {

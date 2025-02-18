@@ -69,16 +69,19 @@ function HomePage() {
             </h2>
           </div>
           <div id="drinkContainer">
-          <h2 id="drinkTitle" className="headerFont">Pistachio Old Fashioned</h2>
-          <div id="drinkContentBox">
-            <img id="oldFashionedImg" src={oldFashioned} alt="" />
-            <div id="oldFashionedBlurb">
-              <p>An innovative twist on the classic Old Fashioned, this drink
-                combines the rich, nutty flavor of pistachios with the timeless sophistication
-                of a traditional cocktail.
-              </p>
+            <h2 id="drinkTitle" className="headerFont">
+              Pistachio Old Fashioned
+            </h2>
+            <div id="drinkContentBox">
+              <img id="oldFashionedImg" src={oldFashioned} alt="" />
+              <div id="oldFashionedBlurb">
+                <p>
+                  An innovative twist on the classic Old Fashioned, this drink
+                  combines the rich, nutty flavor of pistachios with the
+                  timeless sophistication of a traditional cocktail.
+                </p>
+              </div>
             </div>
-          </div>
           </div>
         </div>
         <div id="rightDivider" className="contentDividers"></div>
@@ -88,19 +91,27 @@ function HomePage() {
           </h2>
           <div id="eventsContainer">
             <div className="eventPreview">
-              <h3 id="eventTitle" className="headerFont">Wacky Auction Night</h3>
+              <h3 id="eventTitle" className="headerFont">
+                Wacky Auction Night
+              </h3>
               <h4>Every Friday @ 9PM</h4>
             </div>
             <div className="eventPreview">
-              <h3 id="eventTitle" className="headerFont">Drunk Spelling Bee</h3>
+              <h3 id="eventTitle" className="headerFont">
+                Drunk Spelling Bee
+              </h3>
               <h4>Wednesdays @ 8PM</h4>
             </div>
             <div className="eventPreview">
-              <h3  id="eventTitle" className="headerFont">Live Mystery Karoake</h3>
+              <h3 id="eventTitle" className="headerFont">
+                Live Mystery Karoake
+              </h3>
               <h4>Saturdays @ 9PM</h4>
             </div>
             <div className="eventPreview">
-              <h3  id="eventTitle" className="headerFont">MOVIE TRIVIA</h3>
+              <h3 id="eventTitle" className="headerFont">
+                MOVIE TRIVIA
+              </h3>
               <h4>Sundays @ 7PM</h4>
             </div>
           </div>

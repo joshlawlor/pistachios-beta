@@ -18,15 +18,20 @@ function App() {
     <div className="App">
       <div className="App-Nav">
         <div className="App-Title-Container">
-            {/* Hamburger Menu Button */}
-        <div className="hamburger-menu" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </div>
+          {/* Hamburger Menu Button */}
+          <div
+            className="hamburger-menu"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </div>
           <img src={logo} className="App-logo" alt="logo" />
           <h1 id="siteTitle">PISTACHIOS</h1>
         </div>
-      
-        <div className={`navLinks-Container ${menuOpen ? "open" : ""}`}>          <div>
+
+        <div className={`navLinks-Container ${menuOpen ? "open" : ""}`}>
+          {" "}
+          <div>
             {" "}
             <Link className="navLinks" to="/">
               HOME
