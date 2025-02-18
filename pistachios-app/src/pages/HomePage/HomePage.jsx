@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <div >
         
-<div>
+<div className="homeMain">
     <h1>HomePage</h1>
 
 </div>
