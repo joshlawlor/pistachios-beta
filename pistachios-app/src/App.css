@@ -78,6 +78,13 @@
   font-style: normal;
   padding-right: 8vw;
 }
+.navLinks:hover{
+  color: #f8de89;
+}
+
+.active-link {
+  color: #f8de89; /* Highlight active link */
+}
 
 @keyframes App-logo-spin {
   from {

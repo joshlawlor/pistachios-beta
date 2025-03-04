@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react"; // Import useState
 
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link , useLocation} from "react-router-dom";
 
 import Home from "./pages/HomePage/HomePage";
 import Events from "./pages/EventsPage/EventsPage";
@@ -13,7 +13,7 @@ import Contact from "./pages/ContactPage/ContactPage";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false); // State for menu visibility
-
+  const location = useLocation();
   return (
     <div className="App">
       <div className="App-Nav">
@@ -33,28 +33,28 @@ function App() {
           {" "}
           <div>
             {" "}
-            <Link className="navLinks" to="/">
+            <Link className={`navLinks ${location.pathname === "/" ? "active-link" : ""}`} to="/">
               HOME
             </Link>
           </div>
           <div>
-            <Link className="navLinks" to="/events">
-              EVENTS
+          <Link className={`navLinks ${location.pathname === "/events" ? "active-link" : ""}`} to="/events">
+          EVENTS
             </Link>
           </div>
           <div>
-            <Link className="navLinks" to="/menu">
-              MENU
+          <Link className={`navLinks ${location.pathname === "/menu" ? "active-link" : ""}`} to="/menu">
+          MENU
             </Link>
           </div>
           <div>
-            <Link className="navLinks" to="/blog">
-              BLOG
+          <Link className={`navLinks ${location.pathname === "/blog" ? "active-link" : ""}`} to="/blog">
+          BLOG
             </Link>
           </div>
           <div>
-            <Link className="navLinks" to="/contact">
-              CONTACT
+          <Link className={`navLinks ${location.pathname === "/contact" ? "active-link" : ""}`} to="/contact">
+          CONTACT
             </Link>
           </div>
         </div>
