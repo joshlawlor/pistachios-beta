@@ -13,6 +13,8 @@ import Contact from "./pages/ContactPage/ContactPage";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false); // State for menu visibility
+  const [searchQuery, setSearchQuery] = useState(""); // 🔹 Search query state
+
   const location = useLocation();
   return (
     <div className="App">
@@ -57,6 +59,15 @@ function App() {
           CONTACT
             </Link>
           </div>
+          <div className="navSearch">
+            <input
+              type="text"
+              className="searchInput"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
         </div>
       </div>
 
@@ -71,7 +82,10 @@ function App() {
       <footer className="appFooter">
         <div id="footerContainer">
           <div id="footerCopyright">
-            <h4 className="footerFont">@LAWLOR LLC</h4>
+            <h4 className="footerFont">Contact Us:</h4>
+            <h4 className="footerFont"> <a href="mailto:pistachio@example.com">pistachios@gmail.com</a></h4>
+
+            <p></p>
           </div>
           <div id="footerAddress">
             <h4 className="footerFont">Albany, NY</h4>
@@ -79,7 +93,8 @@ function App() {
           </div>
           <div id="footerContact">
             <h4 className="footerFont">Follow Us</h4>
-            <h4 className="footerFont">@PISTACHIOBAR</h4>
+            <h4 className="footerFont">@PISTACHIOBAR on Instagram</h4>
+            
           </div>
         </div>
       </footer>
