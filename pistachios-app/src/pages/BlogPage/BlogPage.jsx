@@ -31,10 +31,10 @@ const BlogPage = () => {
             The energy was electric a mix of fearless shower singers, hidden
             vocal powerhouses, and the occasional brave soul who relied entirely
             on charisma to carry the tune. I started the night playing it safe
-            with a classic - Bon Jovi’s Livin’ on a Prayer but by round two, I was
-            belting out Total Eclipse of the Heart like I was auditioning for a
-            Broadway show. Did I hit all the notes? Absolutely not. Did the
-            crowd cheer like I just won The Voice? Also no, but in my heart,
+            with a classic - Bon Jovi’s Livin’ on a Prayer but by round two, I
+            was belting out Total Eclipse of the Heart like I was auditioning
+            for a Broadway show. Did I hit all the notes? Absolutely not. Did
+            the crowd cheer like I just won The Voice? Also no, but in my heart,
             they did.
           </p>
 
@@ -46,8 +46,26 @@ const BlogPage = () => {
             mic, grab a drink, and just go for it because the best performances
             aren’t about being perfect, they’re about having the most fun.
           </p>
+      
         </div>
+        
       </div>
+        {/* Comment Form */}
+        <div className="commentSection">
+            <h2>Leave a Comment</h2>
+            <form className="commentForm">
+              <label htmlFor="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+
+              <label htmlFor="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label htmlFor="comment">Comment:</label>
+              <textarea id="comment" name="comment" rows="4" required></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
     </div>
   );
 };
