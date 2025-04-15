@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react"; // Import useState
 
-import { Route, Routes, Link , useLocation} from "react-router-dom";
+import { Route, Routes, Link, useLocation } from "react-router-dom";
 
 import Home from "./pages/HomePage/HomePage";
 import Events from "./pages/EventsPage/EventsPage";
@@ -11,9 +11,40 @@ import Menu from "./pages/MenuPage/MenuPage";
 import Blog from "./pages/BlogPage/BlogPage";
 import Contact from "./pages/ContactPage/ContactPage";
 
+import searchIcon from "./assets/Pictures/searchIcon.png"
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false); // State for menu visibility
   const [searchQuery, setSearchQuery] = useState(""); // 🔹 Search query state
+  // 🔹 Function to handle search submission
+  const [searchHistory, setSearchHistory] = useState([]);
+
+  const handleSearch = () => {
+    const terms = searchQuery
+      .split(/[\s,;]+/)
+      .map(term => term.trim().toLowerCase())
+      .filter(term => term !== "");
+  
+    const uniqueTerms = [...new Set(terms)];
+  
+    if (uniqueTerms.length === 0) {
+      alert("Please enter a search term.");
+      return;
+    }
+  
+    const updatedHistory = [...searchHistory, ...uniqueTerms];
+    const uniqueHistory = [...new Set(updatedHistory)];
+  
+    const alertMessage = 
+      "Current Search Terms:\n" + uniqueTerms.join("\n") +
+      "\n\nSearch History:\n" + uniqueHistory.join("\n");
+  
+    alert(alertMessage);
+    setSearchHistory(updatedHistory);
+    setSearchQuery("");
+  };
+  
+  
 
   const location = useLocation();
   return (
@@ -35,28 +66,53 @@ function App() {
           {" "}
           <div>
             {" "}
-            <Link className={`navLinks ${location.pathname === "/" ? "active-link" : ""}`} to="/">
+            <Link
+              className={`navLinks ${
+                location.pathname === "/" ? "active-link" : ""
+              }`}
+              to="/"
+            >
               HOME
             </Link>
           </div>
           <div>
-          <Link className={`navLinks ${location.pathname === "/events" ? "active-link" : ""}`} to="/events">
-          EVENTS
+            <Link
+              className={`navLinks ${
+                location.pathname === "/events" ? "active-link" : ""
+              }`}
+              to="/events"
+            >
+              EVENTS
             </Link>
           </div>
           <div>
-          <Link className={`navLinks ${location.pathname === "/menu" ? "active-link" : ""}`} to="/menu">
-          MENU
+            <Link
+              className={`navLinks ${
+                location.pathname === "/menu" ? "active-link" : ""
+              }`}
+              to="/menu"
+            >
+              MENU
             </Link>
           </div>
           <div>
-          <Link className={`navLinks ${location.pathname === "/blog" ? "active-link" : ""}`} to="/blog">
-          BLOG
+            <Link
+              className={`navLinks ${
+                location.pathname === "/blog" ? "active-link" : ""
+              }`}
+              to="/blog"
+            >
+              BLOG
             </Link>
           </div>
           <div>
-          <Link className={`navLinks ${location.pathname === "/contact" ? "active-link" : ""}`} to="/contact">
-          CONTACT
+            <Link
+              className={`navLinks ${
+                location.pathname === "/contact" ? "active-link" : ""
+              }`}
+              to="/contact"
+            >
+              CONTACT
             </Link>
           </div>
           <div className="navSearch">
@@ -67,7 +123,12 @@ function App() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
+            <button className="searchButton" onClick={handleSearch}>
+              <img id="searchIcon" src={searchIcon} alt="img"/>
+            </button>
+            
           </div>
+          
         </div>
       </div>
 
@@ -83,7 +144,10 @@ function App() {
         <div id="footerContainer">
           <div id="footerCopyright">
             <h4 className="footerFont">Contact Us:</h4>
-            <h4 className="footerFont"> <a href="mailto:pistachio@example.com">pistachios@gmail.com</a></h4>
+            <h4 className="footerFont">
+              {" "}
+              <a href="mailto:pistachio@example.com">pistachios@gmail.com</a>
+            </h4>
 
             <p></p>
           </div>
@@ -94,7 +158,6 @@ function App() {
           <div id="footerContact">
             <h4 className="footerFont">Follow Us</h4>
             <h4 className="footerFont">@PISTACHIOBAR on Instagram</h4>
-            
           </div>
         </div>
       </footer>
