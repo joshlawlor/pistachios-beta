@@ -2,7 +2,7 @@ import logo from "./pistachio.png";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react"; // Import useState
-
+import { useEffect, useRef } from "react"; 
 import { Route, Routes, Link, useLocation } from "react-router-dom";
 
 import Home from "./pages/HomePage/HomePage";
@@ -14,36 +14,42 @@ import Contact from "./pages/ContactPage/ContactPage";
 import searchIcon from "./assets/Pictures/searchIcon.png"
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false); // State for menu visibility
-  const [searchQuery, setSearchQuery] = useState(""); // 🔹 Search query state
-  // 🔹 Function to handle search submission
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+
+  const searchBoxRef = useRef(null);
 
   const handleSearch = () => {
     const terms = searchQuery
       .split(/[\s,;]+/)
-      .map(term => term.trim().toLowerCase())
-      .filter(term => term !== "");
-  
+      .map((term) => term.trim().toLowerCase())
+      .filter((term) => term !== "");
+
     const uniqueTerms = [...new Set(terms)];
-  
-    if (uniqueTerms.length === 0) {
-      alert("Please enter a search term.");
-      return;
-    }
-  
+    if (uniqueTerms.length === 0) return;
+
     const updatedHistory = [...searchHistory, ...uniqueTerms];
     const uniqueHistory = [...new Set(updatedHistory)];
-  
-    const alertMessage = 
-      "Current Search Terms:\n" + uniqueTerms.join("\n") +
-      "\n\nSearch History:\n" + uniqueHistory.join("\n");
-  
-    alert(alertMessage);
-    setSearchHistory(updatedHistory);
+
+    setSearchResults(uniqueTerms);
+    setSearchHistory(uniqueHistory);
+    setShowResults(true);
     setSearchQuery("");
   };
-  
+
+  // 🔸 Close search box when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (searchBoxRef.current && !searchBoxRef.current.contains(event.target)) {
+        setShowResults(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   
 
   const location = useLocation();
@@ -115,19 +121,36 @@ function App() {
               CONTACT
             </Link>
           </div>
-          <div className="navSearch">
-            <input
-              type="text"
-              className="searchInput"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <button className="searchButton" onClick={handleSearch}>
-              <img id="searchIcon" src={searchIcon} alt="img"/>
-            </button>
-            
+          <div className="navSearch" ref={searchBoxRef}>
+        <input
+          type="text"
+          className="searchInput"
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onFocus={() => searchResults.length > 0 && setShowResults(true)}
+        />
+        <button className="searchButton" onClick={handleSearch}>
+          <img id="searchIcon" src={searchIcon} alt="Search" />
+        </button>
+
+        {showResults && (
+          <div className="searchResultsBox">
+            <div className="resultsSection">
+              <strong>Current Search Terms:</strong>
+              {searchResults.map((term, i) => (
+                <div key={i}>{term}</div>
+              ))}
+            </div>
+            <div className="resultsSection">
+              <strong>Search History:</strong>
+              {searchHistory.map((term, i) => (
+                <div key={i}>{term}</div>
+              ))}
+            </div>
           </div>
+        )}
+      </div>
           
         </div>
       </div>
