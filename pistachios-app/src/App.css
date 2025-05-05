@@ -13,6 +13,28 @@
   }
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.appWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #3A2F2F;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
 .App-Nav {
   background-color: #2e5339;
   font-size: calc(10px + 2vmin);
@@ -117,7 +139,6 @@
 }
 
 .appFooter {
-  /* border: 3px solid black; */
   min-height: 8vh;
   max-height: 10vh;
   overflow: hidden;
@@ -131,11 +152,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border: 3px solid green; */
-}
-
-#footerAddress {
-  /* border: 3px solid red; */
 }
 
 .footerFont {
@@ -143,8 +159,9 @@
   font-weight: 100;
   font-style: normal;
   font-size: medium;
-
 }
+
+
 .navSearch {
   position: relative;
   display: flex;
@@ -218,8 +235,11 @@
     text-align: center;
     z-index: 10;
   }
+  .navSearch {
+    display: none !important;
+  }
   #siteTitle {
-    font-size: x-large;
+    font-size: large;
     margin-top: 10px;
   }
   .navLinks-Container.open {

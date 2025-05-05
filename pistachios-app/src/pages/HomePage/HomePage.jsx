@@ -73,7 +73,7 @@ function HomePage() {
               Pistachio Old Fashioned
             </h2>
             <div id="drinkContentBox">
-              <img id="oldFashionedImg" src={oldFashioned} alt="" />
+              <img id="oldFashionedImg" src={oldFashioned} alt="Glass of Pistachio Old Fashioned cocktail with garnish" />
               <div id="oldFashionedBlurb">
                 <p>
                   An innovative twist on the classic Old Fashioned, this drink

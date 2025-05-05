@@ -14,7 +14,7 @@ const BlogPage = () => {
       {/* Blog Content */}
       <div className="blogContent">
         {/* Left Off-Center Image */}
-        <img src={karaokePic} alt="Blog Illustration" className="blogImage" />
+        <img src={karaokePic} alt="Group singing karaoke on stage" className="blogImage" />
 
         {/* Blog Text */}
         <div className="blogText">
