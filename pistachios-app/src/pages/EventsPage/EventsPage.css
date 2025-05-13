@@ -1,5 +1,127 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
 .eventsMain {
   background-color: #faf3e0;
-  min-height: 82vh;
-  max-height: 80vh;
+  padding: 2vh 5vw;
+  min-height: 80vh;
+  font-family: "Atma", serif;
+  overflow-y: auto;
+}
+
+.eventsTitle {
+  font-family: "Diplomata SC", serif;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #3a2f2f;
+  margin-bottom: 2vh;
+}
+
+.countdownBanner {
+  text-align: center;
+  margin: 1vh 0 2vh;
+  background-color: #d9a441;
+  border: 3px solid #2e5339;
+  border-radius: 20px;
+  padding: 1vh;
+  color: #3a2f2f;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+  gap: 1vw;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  background-color: #d9a441;
+  border: 2px solid #2e5339;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filterButton:hover, .filterButton.active {
+  background-color: #2e5339;
+  color: white;
+}
+
+.eventsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.eventCard {
+  background-color: #d9a441;
+  border: 3px solid #2e5339;
+  border-radius: 25px;
+  width: 250px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  height: 40vh; 
+}
+.eventCard:hover {
+  transform: scale(1.05);
+}
+
+.eventImg {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 1vh;
+  height: 140px;
+  object-fit: cover;
+}
+
+
+.eventButtons {
+  margin-top: auto; 
+  display: flex;
+  justify-content: space-around;
+}
+
+.eventButtons button {
+  background-color: #2e5339;
+  color: #fff;
+  border: none;
+  padding: 0.3em 0.8em;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.eventButtons button:hover {
+  background-color: #3a2f2f;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventsGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eventCard {
+    width: 90vw;
+  }
 }
