@@ -17,6 +17,7 @@ import nametume from "../../assets/Pictures/nametune.avif"
 import boardgame from "../../assets/Pictures/boardgame.png"
 import poolballs from "../../assets/Pictures/poolballs.webp"
 import tvtrivia  from "../../assets/Pictures/tvtrivia.jpg"
+import bartender from "../../assets/Pictures/bartender.jpg"
 const mockEvents = [
     {
         title: "80s Night Dance Party",
@@ -75,7 +76,7 @@ const mockEvents = [
       {
         title: "Bartender's Trivia Face-Off",
         date: "2025-05-29T20:00:00",
-        image: criticPic,
+        image: bartender,
         category: "Trivia",
       }
       ,
